@@ -1,6 +1,7 @@
 package com.asap3210.backgroundsounds
 
 import android.content.Context
+import androidx.annotation.StringRes
 import android.media.AudioAttributes
 import android.media.AudioManager
 import android.media.MediaPlayer
@@ -14,29 +15,29 @@ import kotlin.math.sqrt
 import kotlin.random.Random
 
 /** raw = nombre del archivo en res/raw (grabación real). Si es null, se sintetiza. */
-enum class Ambient(val label: String, val emoji: String, val raw: String? = null) {
-    NONE("Ninguno", "🔇"),
-    SEA("Mar", "🌊", "ambient_mar"),
-    BEACH("Playa", "🏖️", "ambient_playa"),
-    GULLS("Gaviotas", "🐦", "ambient_gaviotas"),
-    RAIN("Lluvia", "🌧️", "ambient_lluvia"),
-    WIND("Viento", "💨", "ambient_viento"),
-    RIVER("Río", "🏞️", "ambient_rio"),
-    FOREST("Bosque", "🌲", "ambient_bosque"),
-    FROGS("Ranas", "🐸", "ambient_ranas"),
-    CAMPFIRE("Hoguera", "🏕️", "ambient_hoguera"),
-    FIRE("Fuego", "🔥", "ambient_fuego"),
-    TRAFFIC("Tráfico", "🚗", "ambient_trafico"),
-    STORE("Tienda", "🛍️", "ambient_tienda"),
-    FARM("Granja", "🐔", "ambient_granja"),
-    AC("Aire acond.", "❄️", "ambient_aire"),
-    RITUAL("Ritual", "🕯️", "ambient_ritual"),
-    MYSTERY("Misterio", "🌫️", "ambient_misterio"),
-    CAFE("Cafetería", "☕"),
-    CHURCH("Misa", "⛪"),
-    AIRPORT("Aeropuerto", "✈️"),
-    TENNIS("Tenis", "🎾"),
-    FOOTBALL("Fútbol", "⚽")
+enum class Ambient(@StringRes val labelRes: Int, val emoji: String, val raw: String? = null) {
+    NONE(R.string.sound_none, "🔇"),
+    SEA(R.string.sound_sea, "🌊", "ambient_mar"),
+    BEACH(R.string.sound_beach, "🏖️", "ambient_playa"),
+    GULLS(R.string.sound_gulls, "🐦", "ambient_gaviotas"),
+    RAIN(R.string.sound_rain, "🌧️", "ambient_lluvia"),
+    WIND(R.string.sound_wind, "💨", "ambient_viento"),
+    RIVER(R.string.sound_river, "🏞️", "ambient_rio"),
+    FOREST(R.string.sound_forest, "🌲", "ambient_bosque"),
+    FROGS(R.string.sound_frogs, "🐸", "ambient_ranas"),
+    CAMPFIRE(R.string.sound_campfire, "🏕️", "ambient_hoguera"),
+    FIRE(R.string.sound_fire, "🔥", "ambient_fuego"),
+    TRAFFIC(R.string.sound_traffic, "🚗", "ambient_trafico"),
+    STORE(R.string.sound_store, "🛍️", "ambient_tienda"),
+    FARM(R.string.sound_farm, "🐔", "ambient_granja"),
+    AC(R.string.sound_ac, "❄️", "ambient_aire"),
+    RITUAL(R.string.sound_ritual, "🕯️", "ambient_ritual"),
+    MYSTERY(R.string.sound_mystery, "🌫️", "ambient_misterio"),
+    CAFE(R.string.sound_cafe, "☕"),
+    CHURCH(R.string.sound_church, "⛪"),
+    AIRPORT(R.string.sound_airport, "✈️"),
+    TENNIS(R.string.sound_tennis, "🎾"),
+    FOOTBALL(R.string.sound_football, "⚽")
 }
 
 /** Filtro paso bajo normalizado para ruido blanco (salida ~ RMS 1). */

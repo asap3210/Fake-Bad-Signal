@@ -1,0 +1,36 @@
+<resources>
+    <string name="tagline">Fai sembrare che non ci sia campo</string>
+    <string name="setup_pending">Configurazione necessaria</string>
+    <string name="setup_permissions">1. Concedi i permessi</string>
+    <string name="setup_role">2. Consenti di rilevare con chi parli</string>
+    <string name="auto_title">Attivazione automatica</string>
+    <string name="auto_on">Si attiva da sola nelle chiamate con i tuoi contatti</string>
+    <string name="auto_off">Disattivata</string>
+    <string name="contacts_card_title">Contatti interessati</string>
+    <string name="contacts_none_yet">Nessuno scelto</string>
+    <string name="selected_n">Scelti: %1$d</string>
+    <string name="effect_title">Effetto sulla tua voce</string>
+    <string name="intensity_fmt">Intensità: %1$d%%</string>
+    <string name="cuts_occasional">Interruzioni occasionali</string>
+    <string name="cuts_heavy">Quasi senza segnale</string>
+    <string name="static_title">Aggiungi fruscio dall\'altoparlante</string>
+    <string name="static_sub">Si sente solo con la chiamata in vivavoce</string>
+    <string name="test_title">Prova</string>
+    <string name="preview_btn">Ascolta come mi sentiranno (8 s)</string>
+    <string name="manual_stop">Ferma la prova manuale</string>
+    <string name="manual_start">Attiva ora (durante una chiamata)</string>
+    <string name="back">‹ Indietro</string>
+    <string name="contacts_title">Contatti</string>
+    <string name="contacts_subtitle">Queste persone ti sentiranno a scatti</string>
+    <string name="search_hint">Cerca per nome o numero</string>
+    <string name="only_selected">Solo scelti</string>
+    <string name="no_contacts">Nessun contatto con numero trovato.</string>
+    <string name="no_permission">Manca il permesso Contatti (torna indietro e concedilo).</string>
+    <string name="notif_title">Fake Bad Signal è attivo</string>
+    <string name="notif_text">Simulazione di cattiva connessione in questa chiamata</string>
+    <string name="preview_recording">Registrazione di 8 secondi… parla normalmente.</string>
+    <string name="preview_applying">Applicazione dell\'interferenza…</string>
+    <string name="preview_playing">Riproduzione: così ti sentirà l\'altra persona.</string>
+    <string name="preview_done">Fatto. Cambia l\'intensità e riprova se vuoi.</string>
+    <string name="preview_error">Impossibile registrare: %1$s</string>
+</resources>

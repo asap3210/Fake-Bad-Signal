@@ -1,3 +1,37 @@
 <resources>
-    <string name="app_name">Fake Bad Signal</string>
+    <string name="app_name" translatable="false">Fake Bad Signal</string>
+    <string name="tagline">Make it seem like there\'s no signal</string>
+    <string name="setup_pending">Setup required</string>
+    <string name="setup_permissions">1. Grant permissions</string>
+    <string name="setup_role">2. Allow detecting who you call</string>
+    <string name="auto_title">Automatic mode</string>
+    <string name="auto_on">Turns on by itself on calls with your contacts</string>
+    <string name="auto_off">Off</string>
+    <string name="contacts_card_title">Affected contacts</string>
+    <string name="contacts_none_yet">None selected yet</string>
+    <string name="selected_n">Selected: %1$d</string>
+    <string name="effect_title">Effect on your voice</string>
+    <string name="intensity_fmt">Intensity: %1$d%%</string>
+    <string name="cuts_occasional">Occasional cuts</string>
+    <string name="cuts_heavy">Almost no signal</string>
+    <string name="static_title">Add static through the speaker</string>
+    <string name="static_sub">Only heard if the call is on speaker</string>
+    <string name="test_title">Try it</string>
+    <string name="preview_btn">Hear how they\'ll hear me (8 s)</string>
+    <string name="manual_stop">Stop manual test</string>
+    <string name="manual_start">Start now (during a call)</string>
+    <string name="back">‹ Back</string>
+    <string name="contacts_title">Contacts</string>
+    <string name="contacts_subtitle">These people will hear you breaking up</string>
+    <string name="search_hint">Search by name or number</string>
+    <string name="only_selected">Selected only</string>
+    <string name="no_contacts">No contacts with a phone number found.</string>
+    <string name="no_permission">Contacts permission missing (go back and grant it).</string>
+    <string name="notif_title">Fake Bad Signal is active</string>
+    <string name="notif_text">Simulating a bad connection on this call</string>
+    <string name="preview_recording">Recording 8 seconds… speak normally.</string>
+    <string name="preview_applying">Applying the interference…</string>
+    <string name="preview_playing">Playing: this is how the other person will hear you.</string>
+    <string name="preview_done">Done. Change the intensity and try again if you like.</string>
+    <string name="preview_error">Couldn\'t record: %1$s</string>
 </resources>

@@ -60,7 +60,7 @@ class SoundService : Service() {
     private fun notification(kind: Ambient): Notification {
         val nm = getSystemService(NotificationManager::class.java)
         nm.createNotificationChannel(
-            NotificationChannel("sounds", "Background Sounds", NotificationManager.IMPORTANCE_LOW)
+            NotificationChannel("sounds", getString(R.string.app_name), NotificationManager.IMPORTANCE_LOW)
         )
         val stop = PendingIntent.getService(
             this, 0,
@@ -69,10 +69,10 @@ class SoundService : Service() {
         )
         return NotificationCompat.Builder(this, "sounds")
             .setSmallIcon(android.R.drawable.ic_media_play)
-            .setContentTitle("${kind.emoji} ${kind.label}")
-            .setContentText("Sonido de fondo en reproducción")
+            .setContentTitle("${kind.emoji} ${getString(kind.labelRes)}")
+            .setContentText(getString(R.string.notif_text))
             .setOngoing(true)
-            .addAction(android.R.drawable.ic_media_pause, "Detener", stop)
+            .addAction(android.R.drawable.ic_media_pause, getString(R.string.notif_stop), stop)
             .build()
     }
 

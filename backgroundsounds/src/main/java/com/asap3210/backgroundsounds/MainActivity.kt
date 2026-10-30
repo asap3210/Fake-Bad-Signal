@@ -1,5 +1,6 @@
 package com.asap3210.backgroundsounds
 
+import androidx.compose.ui.res.stringResource
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -82,9 +83,9 @@ class MainActivity : ComponentActivity() {
                         Text("🎧", fontSize = 44.sp)
                         Spacer(Modifier.width(12.dp))
                         Column {
-                            Text("Background Sounds", style = MaterialTheme.typography.headlineMedium,
+                            Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineMedium,
                                 fontWeight = FontWeight.Bold)
-                            Text("Sonidos de ambiente en bucle", style = MaterialTheme.typography.bodyMedium,
+                            Text(stringResource(R.string.tagline), style = MaterialTheme.typography.bodyMedium,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                     }
@@ -97,19 +98,19 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                             Text(
-                                if (playing != null) "Sonando: ${playing.emoji} ${playing.label}" else "Elige un sonido",
+                                if (playing != null) stringResource(R.string.now_playing, "${playing.emoji} ${stringResource(playing.labelRes)}") else stringResource(R.string.choose_sound),
                                 fontWeight = FontWeight.Bold
                             )
-                            Text("Volumen: ${(volume * 100).toInt()}%")
+                            Text(stringResource(R.string.volume_fmt, (volume * 100).toInt()))
                             Slider(value = volume, onValueChange = {
                                 volume = it
                                 prefs.edit().putFloat("vol", it).apply()
                                 if (playing != null) send(SoundService.ACTION_VOLUME, vol = it)
                             })
-                            Text("Apagar automáticamente", style = MaterialTheme.typography.bodySmall,
+                            Text(stringResource(R.string.timer_title), style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant)
                             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                listOf(0 to "No", 15 to "15 min", 30 to "30 min", 60 to "1 h").forEach { (m, label) ->
+                                listOf(0 to stringResource(R.string.timer_off), 15 to stringResource(R.string.timer_15), 30 to stringResource(R.string.timer_30), 60 to stringResource(R.string.timer_60)).forEach { (m, label) ->
                                     FilterChip(selected = minutes == m, onClick = {
                                         minutes = m
                                         prefs.edit().putInt("min", m).apply()
@@ -135,7 +136,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Text(a.emoji, fontSize = 30.sp)
                         Spacer(Modifier.height(4.dp))
-                        Text(a.label, fontSize = 13.sp, textAlign = TextAlign.Center,
+                        Text(stringResource(a.labelRes), fontSize = 13.sp, textAlign = TextAlign.Center,
                             fontWeight = if (on) FontWeight.Bold else FontWeight.Normal)
                     }
                 }
@@ -147,7 +148,7 @@ class MainActivity : ComponentActivity() {
                             onClick = { send(SoundService.ACTION_STOP) },
                             enabled = playing != null,
                             modifier = Modifier.fillMaxWidth()
-                        ) { Text("■ Detener") }
+                        ) { Text(stringResource(R.string.stop_btn)) }
                         Spacer(Modifier.height(24.dp))
                     }
                 }

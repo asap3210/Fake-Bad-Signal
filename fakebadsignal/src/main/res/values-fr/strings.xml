@@ -1,0 +1,36 @@
+<resources>
+    <string name="tagline">Faites croire qu\'il n\'y a pas de réseau</string>
+    <string name="setup_pending">Configuration requise</string>
+    <string name="setup_permissions">1. Accorder les autorisations</string>
+    <string name="setup_role">2. Autoriser la détection de l\'interlocuteur</string>
+    <string name="auto_title">Activation automatique</string>
+    <string name="auto_on">S\'active seule pendant les appels avec vos contacts</string>
+    <string name="auto_off">Désactivée</string>
+    <string name="contacts_card_title">Contacts concernés</string>
+    <string name="contacts_none_yet">Aucun contact choisi</string>
+    <string name="selected_n">Choisis : %1$d</string>
+    <string name="effect_title">Effet sur votre voix</string>
+    <string name="intensity_fmt">Intensité : %1$d %%</string>
+    <string name="cuts_occasional">Coupures occasionnelles</string>
+    <string name="cuts_heavy">Presque plus de réseau</string>
+    <string name="static_title">Ajouter des grésillements par le haut-parleur</string>
+    <string name="static_sub">Audible seulement si l\'appel est en haut-parleur</string>
+    <string name="test_title">Essayer</string>
+    <string name="preview_btn">Écouter comment on m\'entendra (8 s)</string>
+    <string name="manual_stop">Arrêter l\'essai manuel</string>
+    <string name="manual_start">Activer maintenant (pendant un appel)</string>
+    <string name="back">‹ Retour</string>
+    <string name="contacts_title">Contacts</string>
+    <string name="contacts_subtitle">Ces personnes vous entendront haché</string>
+    <string name="search_hint">Rechercher par nom ou numéro</string>
+    <string name="only_selected">Choisis uniquement</string>
+    <string name="no_contacts">Aucun contact avec numéro trouvé.</string>
+    <string name="no_permission">Autorisation Contacts manquante (revenez et accordez-la).</string>
+    <string name="notif_title">Fake Bad Signal est actif</string>
+    <string name="notif_text">Simulation d\'une mauvaise connexion sur cet appel</string>
+    <string name="preview_recording">Enregistrement de 8 secondes… parlez normalement.</string>
+    <string name="preview_applying">Application des interférences…</string>
+    <string name="preview_playing">Lecture : voici comment l\'autre personne vous entendra.</string>
+    <string name="preview_done">Terminé. Changez l\'intensité et réessayez si vous voulez.</string>
+    <string name="preview_error">Enregistrement impossible : %1$s</string>
+</resources>

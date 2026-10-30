@@ -1,0 +1,36 @@
+<resources>
+    <string name="tagline">Faça parecer que não há sinal</string>
+    <string name="setup_pending">Configuração necessária</string>
+    <string name="setup_permissions">1. Conceder permissões</string>
+    <string name="setup_role">2. Permitir identificar com quem você fala</string>
+    <string name="auto_title">Ativação automática</string>
+    <string name="auto_on">Ativa sozinha nas chamadas com seus contatos</string>
+    <string name="auto_off">Desativada</string>
+    <string name="contacts_card_title">Contatos afetados</string>
+    <string name="contacts_none_yet">Nenhum escolhido ainda</string>
+    <string name="selected_n">Escolhidos: %1$d</string>
+    <string name="effect_title">Efeito na sua voz</string>
+    <string name="intensity_fmt">Intensidade: %1$d%%</string>
+    <string name="cuts_occasional">Cortes ocasionais</string>
+    <string name="cuts_heavy">Quase sem sinal</string>
+    <string name="static_title">Adicionar estática pelo alto-falante</string>
+    <string name="static_sub">Só se ouve com a chamada em alto-falante</string>
+    <string name="test_title">Testar</string>
+    <string name="preview_btn">Ouvir como vão me ouvir (8 s)</string>
+    <string name="manual_stop">Parar teste manual</string>
+    <string name="manual_start">Ativar agora (durante uma chamada)</string>
+    <string name="back">‹ Voltar</string>
+    <string name="contacts_title">Contatos</string>
+    <string name="contacts_subtitle">Estas pessoas vão ouvir sua voz entrecortada</string>
+    <string name="search_hint">Pesquisar por nome ou número</string>
+    <string name="only_selected">Só escolhidos</string>
+    <string name="no_contacts">Nenhum contato com número encontrado.</string>
+    <string name="no_permission">Falta a permissão de Contatos (volte e conceda-a).</string>
+    <string name="notif_title">Fake Bad Signal ativo</string>
+    <string name="notif_text">Simulando má conexão nesta chamada</string>
+    <string name="preview_recording">Gravando 8 segundos… fale normalmente.</string>
+    <string name="preview_applying">Aplicando a interferência…</string>
+    <string name="preview_playing">Reproduzindo: é assim que a outra pessoa vai ouvir você.</string>
+    <string name="preview_done">Pronto. Mude a intensidade e tente de novo se quiser.</string>
+    <string name="preview_error">Não foi possível gravar: %1$s</string>
+</resources>

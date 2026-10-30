@@ -19,6 +19,9 @@ Sonidos de ambiente en bucle (título de trabajo, se puede renombrar): 16 grabac
 
 Las grabaciones están en `backgroundsounds/src/main/res/raw/` (mono, 22 kHz, máx. 60 s), descargadas de Pixabay (licencia Pixabay, sin atribución obligatoria; comprueba las condiciones antes de publicar).
 
+## Idiomas
+Ambas apps se traducen solas al idioma del sistema: inglés (por defecto), español, francés, alemán, italiano y portugués. Los textos están en `res/values*/strings.xml`; para añadir un idioma, crea `values-xx/strings.xml` y añádelo a `res/xml/locales_config.xml`. En Android 13+ cada app también aparece en Ajustes > Idiomas de las apps.
+
 ## Compilar
 Android Studio, o `gradle assembleDebug` (genera un APK por app). GitHub Actions deja ambos APK como artefacto.
 

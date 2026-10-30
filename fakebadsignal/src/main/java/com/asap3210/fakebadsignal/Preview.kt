@@ -33,7 +33,7 @@ object Preview {
                     maxOf(AudioRecord.getMinBufferSize(RATE, AudioFormat.CHANNEL_IN_MONO,
                         AudioFormat.ENCODING_PCM_16BIT), 8192)
                 )
-                say("Grabando 8 segundos… habla con normalidad.")
+                say(ctx.getString(R.string.preview_recording))
                 rec.startRecording()
                 var off = 0
                 while (off < total) {
@@ -43,7 +43,7 @@ object Preview {
                 }
                 rec.stop(); rec.release()
 
-                say("Aplicando la interferencia…")
+                say(ctx.getString(R.string.preview_applying))
                 val k = intensity.coerceIn(0.05f, 1f)
                 var i = 0
                 var lp = 0f
@@ -59,7 +59,7 @@ object Preview {
                     }
                 }
 
-                say("Reproduciendo: así te oirá la otra persona.")
+                say(ctx.getString(R.string.preview_playing))
                 val track = AudioTrack.Builder()
                     .setAudioAttributes(
                         AudioAttributes.Builder()
@@ -77,9 +77,9 @@ object Preview {
                 track.play()
                 Thread.sleep(SECONDS * 1000L + 300)
                 track.stop(); track.release()
-                say("Listo. Cambia la intensidad y vuelve a probar si quieres.", true)
+                say(ctx.getString(R.string.preview_done), true)
             } catch (e: Exception) {
-                say("No se pudo grabar: ${e.message}", true)
+                say(ctx.getString(R.string.preview_error, e.message ?: ""), true)
             }
         }.start()
     }

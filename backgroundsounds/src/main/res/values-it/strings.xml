@@ -1,0 +1,36 @@
+<resources>
+    <string name="tagline">Suoni ambientali in loop</string>
+    <string name="now_playing">In riproduzione: %1$s</string>
+    <string name="choose_sound">Scegli un suono</string>
+    <string name="volume_fmt">Volume: %1$d%%</string>
+    <string name="timer_title">Spegni automaticamente</string>
+    <string name="timer_off">No</string>
+    <string name="timer_15">15 min</string>
+    <string name="timer_30">30 min</string>
+    <string name="timer_60">1 h</string>
+    <string name="stop_btn">■ Ferma</string>
+    <string name="notif_text">Suono di sottofondo in riproduzione</string>
+    <string name="notif_stop">Ferma</string>
+    <string name="sound_none">Nessuno</string>
+    <string name="sound_sea">Mare</string>
+    <string name="sound_beach">Spiaggia</string>
+    <string name="sound_gulls">Gabbiani</string>
+    <string name="sound_rain">Pioggia</string>
+    <string name="sound_wind">Vento</string>
+    <string name="sound_river">Fiume</string>
+    <string name="sound_forest">Bosco</string>
+    <string name="sound_frogs">Rane</string>
+    <string name="sound_campfire">Falò</string>
+    <string name="sound_fire">Fuoco</string>
+    <string name="sound_traffic">Traffico</string>
+    <string name="sound_store">Negozio</string>
+    <string name="sound_farm">Fattoria</string>
+    <string name="sound_ac">Aria cond.</string>
+    <string name="sound_ritual">Rituale</string>
+    <string name="sound_mystery">Mistero</string>
+    <string name="sound_cafe">Caffè</string>
+    <string name="sound_church">Messa</string>
+    <string name="sound_airport">Aeroporto</string>
+    <string name="sound_tennis">Tennis</string>
+    <string name="sound_football">Calcio</string>
+</resources>

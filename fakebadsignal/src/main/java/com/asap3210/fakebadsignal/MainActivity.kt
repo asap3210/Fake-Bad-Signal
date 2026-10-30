@@ -1,5 +1,6 @@
 package com.asap3210.fakebadsignal
 
+import androidx.compose.ui.res.stringResource
 import android.Manifest
 import android.app.role.RoleManager
 import android.content.pm.PackageManager
@@ -142,26 +143,26 @@ class MainActivity : ComponentActivity() {
                     Text("👻", fontSize = 44.sp)
                     Spacer(Modifier.width(12.dp))
                     Column {
-                        Text("Fake Bad Signal", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-                        Text("Que parezca que no hay cobertura", style = MaterialTheme.typography.bodyMedium,
+                        Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.tagline), style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                 }
             }
 
             if (!permsOk || !roleOk) item {
-                Panel("Configuración pendiente") {
+                Panel(stringResource(R.string.setup_pending)) {
                     if (!permsOk) Button(
                         onClick = { permLauncher.launch(neededPerms().toTypedArray()) },
                         Modifier.fillMaxWidth()
-                    ) { Text("1. Conceder permisos") }
+                    ) { Text(stringResource(R.string.setup_permissions)) }
                     if (!roleOk) Button(
                         onClick = {
                             val rm = getSystemService(RoleManager::class.java)
                             roleLauncher.launch(rm.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING))
                         },
                         Modifier.fillMaxWidth()
-                    ) { Text("2. Permitir detectar con quién llamas") }
+                    ) { Text(stringResource(R.string.setup_role)) }
                 }
             }
 
@@ -169,10 +170,10 @@ class MainActivity : ComponentActivity() {
                 Panel(null) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Column(Modifier.weight(1f)) {
-                            Text("Activación automática", fontWeight = FontWeight.Bold)
+                            Text(stringResource(R.string.auto_title), fontWeight = FontWeight.Bold)
                             Text(
-                                if (auto) "Se activa sola en llamadas con tus contactos"
-                                else "Desactivada",
+                                if (auto) stringResource(R.string.auto_on)
+                                else stringResource(R.string.auto_off),
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -192,12 +193,12 @@ class MainActivity : ComponentActivity() {
                         Text("👥", fontSize = 28.sp)
                         Spacer(Modifier.width(12.dp))
                         Column(Modifier.weight(1f)) {
-                            Text("Contactos afectados", fontWeight = FontWeight.Bold)
+                            Text(stringResource(R.string.contacts_card_title), fontWeight = FontWeight.Bold)
                             val names = contacts.filter { it.key in selected }.take(3)
                                 .joinToString(", ") { it.name.substringBefore(" ") }
                             Text(
-                                if (selected.isEmpty()) "Ninguno elegido todavía"
-                                else "${selected.size} elegido(s)" + if (names.isNotEmpty()) ": $names" else "",
+                                if (selected.isEmpty()) stringResource(R.string.contacts_none_yet)
+                                else stringResource(R.string.selected_n, selected.size) + if (names.isNotEmpty()) ": $names" else "",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
@@ -208,19 +209,19 @@ class MainActivity : ComponentActivity() {
             }
 
             item {
-                Panel("Efecto en tu voz") {
-                    Text("Intensidad: ${(intensity * 100).toInt()}%")
+                Panel(stringResource(R.string.effect_title)) {
+                    Text(stringResource(R.string.intensity_fmt, (intensity * 100).toInt()))
                     Slider(value = intensity, onValueChange = { intensity = it; Prefs.setIntensity(this@MainActivity, it) })
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                        Text("Cortes ocasionales", style = MaterialTheme.typography.bodySmall,
+                        Text(stringResource(R.string.cuts_occasional), style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant)
-                        Text("Casi sin cobertura", style = MaterialTheme.typography.bodySmall,
+                        Text(stringResource(R.string.cuts_heavy), style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Column(Modifier.weight(1f)) {
-                            Text("Añadir estática por el altavoz")
-                            Text("Solo se oye con la llamada en altavoz", style = MaterialTheme.typography.bodySmall,
+                            Text(stringResource(R.string.static_title))
+                            Text(stringResource(R.string.static_sub), style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant)
                         }
                         Switch(checked = noise, onCheckedChange = { noise = it; Prefs.setNoise(this@MainActivity, it) })
@@ -229,7 +230,7 @@ class MainActivity : ComponentActivity() {
             }
 
             item {
-                Panel("Probar") {
+                Panel(stringResource(R.string.test_title)) {
                     Button(
                         enabled = permsOk && !previewBusy,
                         onClick = {
@@ -240,7 +241,7 @@ class MainActivity : ComponentActivity() {
                             }
                         },
                         modifier = Modifier.fillMaxWidth()
-                    ) { Text("Escuchar cómo me oirán (8 s)") }
+                    ) { Text(stringResource(R.string.preview_btn)) }
                     if (previewMsg.isNotEmpty()) Text(previewMsg, style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant)
                     OutlinedButton(
@@ -250,7 +251,7 @@ class MainActivity : ComponentActivity() {
                             testing = !testing
                         },
                         Modifier.fillMaxWidth()
-                    ) { Text(if (testing) "Detener prueba manual" else "Activar ahora (durante una llamada)") }
+                    ) { Text(if (testing) stringResource(R.string.manual_stop) else stringResource(R.string.manual_start)) }
                 }
             }
 
@@ -275,26 +276,26 @@ class MainActivity : ComponentActivity() {
 
         Column(Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
             Row(Modifier.padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
-                TextButton(onClick = onBack) { Text("‹ Volver", fontSize = 16.sp) }
+                TextButton(onClick = onBack) { Text(stringResource(R.string.back), fontSize = 16.sp) }
                 Spacer(Modifier.weight(1f))
-                Text("${selected.size} elegido(s)", color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.selected_n, selected.size), color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
             }
-            Text("Contactos", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
-            Text("Con estas personas te oirán entrecortado", style = MaterialTheme.typography.bodyMedium,
+            Text(stringResource(R.string.contacts_title), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+            Text(stringResource(R.string.contacts_subtitle), style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
             Spacer(Modifier.height(12.dp))
             OutlinedTextField(
                 value = query, onValueChange = { query = it },
-                label = { Text("Buscar por nombre o número") }, singleLine = true,
+                label = { Text(stringResource(R.string.search_hint)) }, singleLine = true,
                 shape = RoundedCornerShape(16.dp), modifier = Modifier.fillMaxWidth()
             )
             Row(Modifier.padding(vertical = 8.dp)) {
                 FilterChip(selected = onlySelected, onClick = { onlySelected = !onlySelected },
-                    label = { Text("Solo elegidos") })
+                    label = { Text(stringResource(R.string.only_selected)) })
             }
             if (contacts.isEmpty()) {
                 Text(
-                    if (permsOk) "No se encontraron contactos con número." else "Falta el permiso de contactos (vuelve y concédelo).",
+                    if (permsOk) stringResource(R.string.no_contacts) else stringResource(R.string.no_permission),
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }

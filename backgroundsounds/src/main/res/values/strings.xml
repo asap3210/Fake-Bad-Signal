@@ -1,3 +1,37 @@
 <resources>
-    <string name="app_name">Background Sounds</string>
+    <string name="app_name" translatable="false">Background Sounds</string>
+    <string name="tagline">Looping ambient sounds</string>
+    <string name="now_playing">Now playing: %1$s</string>
+    <string name="choose_sound">Pick a sound</string>
+    <string name="volume_fmt">Volume: %1$d%%</string>
+    <string name="timer_title">Turn off automatically</string>
+    <string name="timer_off">Off</string>
+    <string name="timer_15">15 min</string>
+    <string name="timer_30">30 min</string>
+    <string name="timer_60">1 h</string>
+    <string name="stop_btn">■ Stop</string>
+    <string name="notif_text">Background sound playing</string>
+    <string name="notif_stop">Stop</string>
+    <string name="sound_none">None</string>
+    <string name="sound_sea">Sea</string>
+    <string name="sound_beach">Beach</string>
+    <string name="sound_gulls">Seagulls</string>
+    <string name="sound_rain">Rain</string>
+    <string name="sound_wind">Wind</string>
+    <string name="sound_river">River</string>
+    <string name="sound_forest">Forest</string>
+    <string name="sound_frogs">Frogs</string>
+    <string name="sound_campfire">Campfire</string>
+    <string name="sound_fire">Fire</string>
+    <string name="sound_traffic">Traffic</string>
+    <string name="sound_store">Store</string>
+    <string name="sound_farm">Farm</string>
+    <string name="sound_ac">A/C</string>
+    <string name="sound_ritual">Ritual</string>
+    <string name="sound_mystery">Mystery</string>
+    <string name="sound_cafe">Café</string>
+    <string name="sound_church">Church</string>
+    <string name="sound_airport">Airport</string>
+    <string name="sound_tennis">Tennis</string>
+    <string name="sound_football">Football</string>
 </resources>

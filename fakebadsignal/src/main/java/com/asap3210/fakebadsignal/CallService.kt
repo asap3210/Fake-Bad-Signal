@@ -26,12 +26,12 @@ class CallService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val nm = getSystemService(NotificationManager::class.java)
         nm.createNotificationChannel(
-            NotificationChannel("tc", "Fake Bad Signal", NotificationManager.IMPORTANCE_LOW)
+            NotificationChannel("tc", getString(R.string.app_name), NotificationManager.IMPORTANCE_LOW)
         )
         val n: Notification = NotificationCompat.Builder(this, "tc")
             .setSmallIcon(android.R.drawable.stat_sys_phone_call)
-            .setContentTitle("Fake Bad Signal activo")
-            .setContentText("Simulando mala cobertura en esta llamada")
+            .setContentTitle(getString(R.string.notif_title))
+            .setContentText(getString(R.string.notif_text))
             .setOngoing(true)
             .build()
         ServiceCompat.startForeground(this, 1, n, ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK)

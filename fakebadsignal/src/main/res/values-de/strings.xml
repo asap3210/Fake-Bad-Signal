@@ -1,0 +1,36 @@
+<resources>
+    <string name="tagline">Lass es so wirken, als hättest du kein Netz</string>
+    <string name="setup_pending">Einrichtung erforderlich</string>
+    <string name="setup_permissions">1. Berechtigungen erteilen</string>
+    <string name="setup_role">2. Erkennen erlauben, mit wem du telefonierst</string>
+    <string name="auto_title">Automatischer Modus</string>
+    <string name="auto_on">Startet von selbst bei Anrufen mit deinen Kontakten</string>
+    <string name="auto_off">Aus</string>
+    <string name="contacts_card_title">Betroffene Kontakte</string>
+    <string name="contacts_none_yet">Noch keine ausgewählt</string>
+    <string name="selected_n">Ausgewählt: %1$d</string>
+    <string name="effect_title">Effekt auf deine Stimme</string>
+    <string name="intensity_fmt">Intensität: %1$d %%</string>
+    <string name="cuts_occasional">Gelegentliche Aussetzer</string>
+    <string name="cuts_heavy">Fast kein Empfang</string>
+    <string name="static_title">Rauschen über den Lautsprecher hinzufügen</string>
+    <string name="static_sub">Nur hörbar, wenn der Anruf auf Lautsprecher läuft</string>
+    <string name="test_title">Ausprobieren</string>
+    <string name="preview_btn">Anhören, wie man mich hört (8 s)</string>
+    <string name="manual_stop">Manuellen Test beenden</string>
+    <string name="manual_start">Jetzt starten (während eines Anrufs)</string>
+    <string name="back">‹ Zurück</string>
+    <string name="contacts_title">Kontakte</string>
+    <string name="contacts_subtitle">Diese Personen hören dich abgehackt</string>
+    <string name="search_hint">Nach Name oder Nummer suchen</string>
+    <string name="only_selected">Nur ausgewählte</string>
+    <string name="no_contacts">Keine Kontakte mit Telefonnummer gefunden.</string>
+    <string name="no_permission">Kontakte-Berechtigung fehlt (zurückgehen und erteilen).</string>
+    <string name="notif_title">Fake Bad Signal ist aktiv</string>
+    <string name="notif_text">Simuliert eine schlechte Verbindung in diesem Anruf</string>
+    <string name="preview_recording">Aufnahme läuft 8 Sekunden … sprich normal.</string>
+    <string name="preview_applying">Störung wird angewendet …</string>
+    <string name="preview_playing">Wiedergabe: So hört dich die andere Person.</string>
+    <string name="preview_done">Fertig. Ändere die Intensität und probiere es erneut.</string>
+    <string name="preview_error">Aufnahme nicht möglich: %1$s</string>
+</resources>
