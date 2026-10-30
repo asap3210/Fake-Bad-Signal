@@ -5,17 +5,32 @@ plugins {
 
 android {
     namespace = "com.asap3210.backgroundsounds"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.asap3210.backgroundsounds"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 36
+        versionCode = (project.findProperty("versionCode") as String?)?.toIntOrNull() ?: 1
+        versionName = (project.findProperty("versionName") as String?) ?: "1.0"
+    }
+    // Firma de release: solo si hay keystore (en GitHub Actions viene de los secrets)
+    signingConfigs {
+        val ksPath = System.getenv("KEYSTORE_PATH")
+        if (!ksPath.isNullOrEmpty()) {
+            create("release") {
+                storeFile = file(ksPath)
+                storePassword = System.getenv("KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("KEY_ALIAS")
+                keyPassword = System.getenv("KEY_PASSWORD")
+            }
+        }
     }
     buildTypes {
-        release { isMinifyEnabled = false }
+        release {
+            isMinifyEnabled = false
+            signingConfigs.findByName("release")?.let { signingConfig = it }
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

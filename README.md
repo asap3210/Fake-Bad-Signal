@@ -21,3 +21,18 @@ Las grabaciones están en `backgroundsounds/src/main/res/raw/` (mono, 22 kHz, m�
 
 ## Compilar
 Android Studio, o `gradle assembleDebug` (genera un APK por app). GitHub Actions deja ambos APK como artefacto.
+
+## Publicar en Google Play (AAB firmado)
+El workflow `Release AAB (Google Play)` (Actions > Run workflow, o al subir una etiqueta `v1.0`) genera un `.aab` por app, firmado con tu clave de subida.
+
+Secrets necesarios (Settings > Secrets and variables > Actions > New repository secret):
+
+| Secret | Contenido |
+|---|---|
+| `KEYSTORE_BASE64` | el archivo `.jks` codificado en base64 |
+| `KEYSTORE_PASSWORD` | contraseña del keystore |
+| `KEY_ALIAS` | alias de la clave (`upload`) |
+| `KEY_PASSWORD` | contraseña de la clave |
+
+El `versionCode` sube solo con cada ejecución (número de run). Las apps apuntan a Android 16 (API 36), requisito de Google Play desde el 31/08/2026.
+Guarda una copia del keystore fuera de GitHub. Con Play App Signing, si la pierdes, Google permite restablecer la clave de subida.

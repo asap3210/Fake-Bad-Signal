@@ -5,3 +5,7 @@ local.properties
 build/
 captures/
 .DS_Store
+*.jks
+*.keystore
+keystore*.txt
+secrets*.txt
