@@ -80,7 +80,11 @@ class MainActivity : ComponentActivity() {
             surfaceVariant = Color(0xFF221B4A), onSurfaceVariant = Color(0xFFC9C2EA),
             outline = Color(0xFF6B5FB0)
         ),
-        content = content
+        content = {
+            CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.onBackground) {
+                content()
+            }
+        }
     )
 
     @Composable

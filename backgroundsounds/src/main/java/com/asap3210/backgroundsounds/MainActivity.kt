@@ -51,7 +51,11 @@ class MainActivity : ComponentActivity() {
                     surface = Color(0xFF0B1F24), onSurface = Color(0xFFEAFBFA),
                     surfaceVariant = Color(0xFF12343B), onSurfaceVariant = Color(0xFFA9CFD0)
                 )
-            ) { Screen() }
+            ) {
+                CompositionLocalProvider(LocalContentColor provides MaterialTheme.colorScheme.onBackground) {
+                    Screen()
+                }
+            }
         }
     }
 
