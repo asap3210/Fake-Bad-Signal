@@ -37,7 +37,7 @@ Usa el rol `ROLE_CALL_SCREENING` (CallScreeningService) solo para conocer el nú
 - Cifrado en tránsito: no aplica (sin tráfico de red).
 - Eliminación de datos: los ajustes se borran al desinstalar o borrar los datos de la app.
 - Anuncios: **No contiene anuncios**.
-- Política de privacidad (URL): https://github.com/asap3210/TroubleCall/blob/main/PRIVACY.md
+- Política de privacidad (URL): https://github.com/asap3210/Fake-Bad-Signal/blob/main/PRIVACY.md
   (añade tu email de contacto en el archivo antes de publicar)
 
 ## Servicio en primer plano

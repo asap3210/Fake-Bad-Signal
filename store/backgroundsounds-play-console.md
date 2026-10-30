@@ -11,7 +11,7 @@ Solo `POST_NOTIFICATIONS` (aviso de reproducción) y servicio en primer plano de
 
 ## Seguridad de los datos
 - Recopila datos: **No**. Comparte datos: **No**. Anuncios: **No**.
-- Política de privacidad (URL): https://github.com/asap3210/TroubleCall/blob/main/PRIVACY.md
+- Política de privacidad (URL): https://github.com/asap3210/Fake-Bad-Signal/blob/main/PRIVACY.md
 
 ## Servicio en primer plano
 - Tipo: `mediaPlayback` (SoundService): reproducir sonido ambiente en segundo plano con notificación y botón de detener.

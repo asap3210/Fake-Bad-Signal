@@ -31,7 +31,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-private const val PRIVACY_URL = "https://github.com/asap3210/TroubleCall/blob/main/PRIVACY.md"
+private const val PRIVACY_URL = "https://github.com/asap3210/Fake-Bad-Signal/blob/main/PRIVACY.md"
 
 class MainActivity : ComponentActivity() {
     private var permsOk by mutableStateOf(false)
