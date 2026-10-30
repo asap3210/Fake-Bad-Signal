@@ -29,7 +29,7 @@ No data is shared with anyone. Settings stay on your device until you clear the 
 The apps are not directed at children.
 
 ### Contact
-[CONTACT EMAIL – add before publishing]
+asap3210@gmail.com
 
 ## Español
 
@@ -57,4 +57,4 @@ No se comparten datos con nadie. Los ajustes quedan en tu dispositivo hasta que 
 Las apps no están dirigidas a menores.
 
 ### Contacto
-[EMAIL DE CONTACTO – añadir antes de publicar]
+asap3210@gmail.com
