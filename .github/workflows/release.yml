@@ -2,6 +2,7 @@ name: Release AAB (Google Play)
 on:
   workflow_dispatch:
   push:
+    branches: ["release"]
     tags: ["v*"]
 jobs:
   release:
