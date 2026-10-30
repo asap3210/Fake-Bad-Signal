@@ -33,4 +33,11 @@
     <string name="preview_playing">Lecture : voici comment l\'autre personne vous entendra.</string>
     <string name="preview_done">Terminé. Changez l\'intensité et réessayez si vous voulez.</string>
     <string name="preview_error">Enregistrement impossible : %1$s</string>
+    <string name="perm_title">Avant de demander des autorisations</string>
+    <string name="perm_core_body">Fake Bad Signal a besoin de :\n\n• Contacts : pour choisir avec quelles personnes l\'effet de mauvais réseau s\'applique.\n• État du téléphone et détection des appels : pour savoir quand un appel commence et se termine, et avec qui, afin d\'activer et désactiver l\'effet automatiquement.\n• Notifications : pour afficher un avis pendant que l\'effet est actif.\n\nRien n\'est envoyé ni partagé : tout reste sur votre appareil. L\'application ne bloque jamais vos appels et ne les enregistre pas ; l\'effet coupe seulement brièvement votre propre micro.</string>
+    <string name="perm_mic_title">Micro pour l\'aperçu</string>
+    <string name="perm_mic_body">Le micro n\'est utilisé que lorsque vous appuyez sur « Écouter comment on m\'entendra ». Il enregistre 8 secondes sur votre téléphone, applique l\'effet et le relit. L\'enregistrement n\'est ni conservé ni envoyé.</string>
+    <string name="perm_continue">Continuer</string>
+    <string name="perm_not_now">Pas maintenant</string>
+    <string name="privacy_policy">Politique de confidentialité</string>
 </resources>

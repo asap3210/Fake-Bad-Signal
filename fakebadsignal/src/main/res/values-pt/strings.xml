@@ -33,4 +33,11 @@
     <string name="preview_playing">Reproduzindo: é assim que a outra pessoa vai ouvir você.</string>
     <string name="preview_done">Pronto. Mude a intensidade e tente de novo se quiser.</string>
     <string name="preview_error">Não foi possível gravar: %1$s</string>
+    <string name="perm_title">Antes de pedir permissões</string>
+    <string name="perm_core_body">O Fake Bad Signal precisa de:\n\n• Contatos: para você escolher com quais pessoas o efeito de sinal ruim é aplicado.\n• Estado do telefone e detecção de chamadas: para saber quando uma chamada começa e termina, e com quem, e assim ativar e desativar o efeito sozinho.\n• Notificações: para mostrar um aviso enquanto o efeito está ativo.\n\nNada é enviado nem compartilhado: tudo fica no seu aparelho. O app nunca bloqueia nem grava suas chamadas; o efeito apenas silencia por instantes o seu próprio microfone.</string>
+    <string name="perm_mic_title">Microfone para a prévia</string>
+    <string name="perm_mic_body">O microfone só é usado quando você toca em “Ouvir como vão me ouvir”. Grava 8 segundos no seu celular, aplica o efeito e reproduz. A gravação não é salva nem enviada.</string>
+    <string name="perm_continue">Continuar</string>
+    <string name="perm_not_now">Agora não</string>
+    <string name="privacy_policy">Política de privacidade</string>
 </resources>

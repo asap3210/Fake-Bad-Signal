@@ -34,4 +34,11 @@
     <string name="preview_playing">Playing: this is how the other person will hear you.</string>
     <string name="preview_done">Done. Change the intensity and try again if you like.</string>
     <string name="preview_error">Couldn\'t record: %1$s</string>
+    <string name="perm_title">Before we ask for permissions</string>
+    <string name="perm_core_body">Fake Bad Signal needs:\n\n• Contacts: so you can choose which people get the bad-signal effect.\n• Phone state and call detection: to know when a call starts and ends, and with whom, so the effect turns on and off by itself.\n• Notifications: to show a notice while the effect is running.\n\nNothing is uploaded or shared: everything stays on your device. The app never blocks your calls and never records them; the effect only briefly mutes your own microphone.</string>
+    <string name="perm_mic_title">Microphone for the preview</string>
+    <string name="perm_mic_body">The microphone is only used when you tap “Hear how they\'ll hear me”. It records 8 seconds on your phone, applies the effect and plays it back. The recording is not saved or sent anywhere.</string>
+    <string name="perm_continue">Continue</string>
+    <string name="perm_not_now">Not now</string>
+    <string name="privacy_policy">Privacy policy</string>
 </resources>

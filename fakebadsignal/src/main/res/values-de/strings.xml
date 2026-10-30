@@ -33,4 +33,11 @@
     <string name="preview_playing">Wiedergabe: So hört dich die andere Person.</string>
     <string name="preview_done">Fertig. Ändere die Intensität und probiere es erneut.</string>
     <string name="preview_error">Aufnahme nicht möglich: %1$s</string>
+    <string name="perm_title">Bevor wir Berechtigungen anfragen</string>
+    <string name="perm_core_body">Fake Bad Signal benötigt:\n\n• Kontakte: damit du auswählen kannst, bei welchen Personen der Schlechter-Empfang-Effekt angewendet wird.\n• Telefonstatus und Anruferkennung: um zu erkennen, wann ein Anruf beginnt und endet und mit wem, damit sich der Effekt von selbst ein- und ausschaltet.\n• Benachrichtigungen: um einen Hinweis anzuzeigen, solange der Effekt läuft.\n\nNichts wird hochgeladen oder geteilt: Alles bleibt auf deinem Gerät. Die App blockiert deine Anrufe nie und nimmt sie nicht auf; der Effekt schaltet nur kurz dein eigenes Mikrofon stumm.</string>
+    <string name="perm_mic_title">Mikrofon für die Vorschau</string>
+    <string name="perm_mic_body">Das Mikrofon wird nur verwendet, wenn du auf „Anhören, wie man mich hört“ tippst. Es nimmt 8 Sekunden auf deinem Telefon auf, wendet den Effekt an und spielt ihn ab. Die Aufnahme wird weder gespeichert noch gesendet.</string>
+    <string name="perm_continue">Weiter</string>
+    <string name="perm_not_now">Nicht jetzt</string>
+    <string name="privacy_policy">Datenschutzerklärung</string>
 </resources>

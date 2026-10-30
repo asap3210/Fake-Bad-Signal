@@ -33,4 +33,11 @@
     <string name="preview_playing">Riproduzione: così ti sentirà l\'altra persona.</string>
     <string name="preview_done">Fatto. Cambia l\'intensità e riprova se vuoi.</string>
     <string name="preview_error">Impossibile registrare: %1$s</string>
+    <string name="perm_title">Prima di chiedere i permessi</string>
+    <string name="perm_core_body">Fake Bad Signal ha bisogno di:\n\n• Contatti: per scegliere a quali persone applicare l\'effetto di cattiva ricezione.\n• Stato del telefono e rilevamento delle chiamate: per sapere quando una chiamata inizia e finisce, e con chi, così l\'effetto si attiva e si disattiva da solo.\n• Notifiche: per mostrare un avviso mentre l\'effetto è attivo.\n\nNiente viene caricato o condiviso: tutto resta sul tuo dispositivo. L\'app non blocca mai le chiamate e non le registra; l\'effetto silenzia solo per brevi momenti il tuo microfono.</string>
+    <string name="perm_mic_title">Microfono per l\'anteprima</string>
+    <string name="perm_mic_body">Il microfono viene usato solo quando tocchi «Ascolta come mi sentiranno». Registra 8 secondi sul telefono, applica l\'effetto e lo riproduce. La registrazione non viene salvata né inviata.</string>
+    <string name="perm_continue">Continua</string>
+    <string name="perm_not_now">Non ora</string>
+    <string name="privacy_policy">Informativa sulla privacy</string>
 </resources>

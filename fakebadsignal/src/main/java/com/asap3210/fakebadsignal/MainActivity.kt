@@ -1,6 +1,10 @@
 package com.asap3210.fakebadsignal
 
 import androidx.compose.ui.res.stringResource
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import android.Manifest
 import android.app.role.RoleManager
 import android.content.pm.PackageManager
@@ -27,6 +31,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+private const val PRIVACY_URL = "https://github.com/asap3210/TroubleCall/blob/main/PRIVACY.md"
+
 class MainActivity : ComponentActivity() {
     private var permsOk by mutableStateOf(false)
     private var roleOk by mutableStateOf(false)
@@ -36,6 +42,13 @@ class MainActivity : ComponentActivity() {
         registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
             permsOk = hasPerms()
         }
+    private var dialog by mutableStateOf<String?>(null)
+    private var pendingAfterMic: (() -> Unit)? = null
+    private val micLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { ok ->
+            if (ok) pendingAfterMic?.invoke()
+            pendingAfterMic = null
+        }
     private val roleLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             roleOk = hasRole()
@@ -44,12 +57,18 @@ class MainActivity : ComponentActivity() {
     private fun neededPerms() = buildList {
         add(Manifest.permission.READ_CONTACTS)
         add(Manifest.permission.READ_PHONE_STATE)
-        add(Manifest.permission.RECORD_AUDIO)
         if (Build.VERSION.SDK_INT >= 33) add(Manifest.permission.POST_NOTIFICATIONS)
     }
 
     private fun hasPerms() = neededPerms().all {
         checkSelfPermission(it) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun hasMic() =
+        checkSelfPermission(Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+
+    private fun openPrivacy() {
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_URL)))
     }
 
     private fun hasRole() =
@@ -124,6 +143,36 @@ class MainActivity : ComponentActivity() {
                 else -> HomeScreen(contacts, selected, onOpenContacts = { screen = "contacts" })
             }
         }
+
+        // Divulgación destacada ANTES de pedir cada permiso sensible
+        when (dialog) {
+            "core" -> AlertDialog(
+                onDismissRequest = { dialog = null },
+                title = { Text(stringResource(R.string.perm_title)) },
+                text = { Text(stringResource(R.string.perm_core_body), modifier = Modifier.verticalScroll(rememberScrollState())) },
+                confirmButton = {
+                    TextButton(onClick = { dialog = null; permLauncher.launch(neededPerms().toTypedArray()) }) {
+                        Text(stringResource(R.string.perm_continue))
+                    }
+                },
+                dismissButton = { TextButton(onClick = { dialog = null }) { Text(stringResource(R.string.perm_not_now)) } }
+            )
+            "mic" -> AlertDialog(
+                onDismissRequest = { dialog = null; pendingAfterMic = null },
+                title = { Text(stringResource(R.string.perm_mic_title)) },
+                text = { Text(stringResource(R.string.perm_mic_body)) },
+                confirmButton = {
+                    TextButton(onClick = { dialog = null; micLauncher.launch(Manifest.permission.RECORD_AUDIO) }) {
+                        Text(stringResource(R.string.perm_continue))
+                    }
+                },
+                dismissButton = {
+                    TextButton(onClick = { dialog = null; pendingAfterMic = null }) {
+                        Text(stringResource(R.string.perm_not_now))
+                    }
+                }
+            )
+        }
     }
 
     // ---------- Pantalla principal ----------
@@ -157,7 +206,7 @@ class MainActivity : ComponentActivity() {
             if (!permsOk || !roleOk) item {
                 Panel(stringResource(R.string.setup_pending)) {
                     if (!permsOk) Button(
-                        onClick = { permLauncher.launch(neededPerms().toTypedArray()) },
+                        onClick = { dialog = "core" },
                         Modifier.fillMaxWidth()
                     ) { Text(stringResource(R.string.setup_permissions)) }
                     if (!roleOk) Button(
@@ -236,13 +285,16 @@ class MainActivity : ComponentActivity() {
             item {
                 Panel(stringResource(R.string.test_title)) {
                     Button(
-                        enabled = permsOk && !previewBusy,
+                        enabled = !previewBusy,
                         onClick = {
-                            previewBusy = true
-                            Preview.run(this@MainActivity, intensity, noise) { msg, done ->
-                                previewMsg = msg
-                                if (done) previewBusy = false
+                            val go = {
+                                previewBusy = true
+                                Preview.run(this@MainActivity, intensity, noise) { msg, done ->
+                                    previewMsg = msg
+                                    if (done) previewBusy = false
+                                }
                             }
+                            if (hasMic()) go() else { pendingAfterMic = go; dialog = "mic" }
                         },
                         modifier = Modifier.fillMaxWidth()
                     ) { Text(stringResource(R.string.preview_btn)) }
@@ -259,6 +311,11 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
+            item {
+                TextButton(onClick = { openPrivacy() }, Modifier.fillMaxWidth()) {
+                    Text(stringResource(R.string.privacy_policy))
+                }
+            }
             item { Spacer(Modifier.height(24.dp)) }
         }
     }

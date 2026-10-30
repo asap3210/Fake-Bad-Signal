@@ -33,4 +33,11 @@
     <string name="preview_playing">Reproduciendo: así te oirá la otra persona.</string>
     <string name="preview_done">Listo. Cambia la intensidad y vuelve a probar si quieres.</string>
     <string name="preview_error">No se pudo grabar: %1$s</string>
+    <string name="perm_title">Antes de pedirte permisos</string>
+    <string name="perm_core_body">Fake Bad Signal necesita:\n\n• Contactos: para que elijas con qué personas se aplica el efecto de mala cobertura.\n• Estado del teléfono y detección de llamadas: para saber cuándo empieza y termina una llamada, y con quién, y así activar y desactivar el efecto solo.\n• Notificaciones: para mostrar un aviso mientras el efecto está activo.\n\nNo se sube ni se comparte nada: todo se queda en tu móvil. La app nunca bloquea ni graba tus llamadas; el efecto solo silencia por momentos tu propio micrófono.</string>
+    <string name="perm_mic_title">Micrófono para el ejemplo</string>
+    <string name="perm_mic_body">El micrófono solo se usa cuando pulsas “Escuchar cómo me oirán”. Graba 8 segundos en tu móvil, aplica el efecto y lo reproduce. La grabación no se guarda ni se envía a ningún sitio.</string>
+    <string name="perm_continue">Continuar</string>
+    <string name="perm_not_now">Ahora no</string>
+    <string name="privacy_policy">Política de privacidad</string>
 </resources>
