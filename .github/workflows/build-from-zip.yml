@@ -1,7 +1,7 @@
-name: Build APK from ZIP
+name: Build APKs from ZIP
 on:
   push:
-    paths: ["TroubleCall.zip", ".github/workflows/build-from-zip.yml"]
+    paths: ["FakeBadSignal.zip", ".github/workflows/build-from-zip.yml"]
   workflow_dispatch:
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
       - name: Descomprimir proyecto
         run: |
           mkdir project
-          unzip -q TroubleCall.zip -d project
+          unzip -q FakeBadSignal.zip -d project
           DIR=$(dirname "$(find project -name settings.gradle.kts | head -n1)")
           echo "PROJECT_DIR=$DIR" >> "$GITHUB_ENV"
       - uses: actions/setup-java@v4
@@ -20,8 +20,10 @@ jobs:
         with: { gradle-version: "8.7" }
       - name: Compilar
         working-directory: ${{ env.PROJECT_DIR }}
-        run: gradle :app:assembleDebug
+        run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
-          name: TroubleCall-debug-apk
-          path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/app-debug.apk
+          name: FakeBadSignal-APKs
+          path: |
+            ${{ env.PROJECT_DIR }}/fakebadsignal/build/outputs/apk/debug/*.apk
+            ${{ env.PROJECT_DIR }}/backgroundsounds/build/outputs/apk/debug/*.apk

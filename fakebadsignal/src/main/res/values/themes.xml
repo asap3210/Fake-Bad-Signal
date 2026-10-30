@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.FakeBadSignal" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#14102B</item>
+        <item name="android:navigationBarColor">#14102B</item>
+        <item name="android:windowBackground">#14102B</item>
+    </style>
+</resources>
